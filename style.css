@@ -48,15 +48,18 @@ h4 {
 
 li {
   display: inline;
-  color:#ffffff;
   padding: 0 2vw;
-  font-size: 30px;
   opacity: 0.4;
   transition: opacity 0.2s ease-in-out;
 }
 
 li:hover {
   opacity: 1;
+}
+
+a {
+  color:#ffffff;
+  font-size: 30px;
 }
 
 a:visited {
