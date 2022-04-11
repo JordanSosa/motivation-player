@@ -1,10 +1,15 @@
 # motivation-player
 This is a music player that plays motivational speeches instead of music.
 
-Credit to:
+***
+
+# credits
+
 @Traversy Media on YouTube for his media-player tutorial: 
 
 https://www.youtube.com/watch?v=QTHRWGn_sJw
+
+---
 
 @Kahlil Gibran, author of Defeat &
 
@@ -12,11 +17,15 @@ https://www.youtube.com/watch?v=QTHRWGn_sJw
 
 https://www.youtube.com/watch?v=JE8taOWjVbc&t=0s
 
+---
+
 @Max Ehrmann, author of Desiderata &
 
 @RedFrost Motivation and @Shayne Morris on YouTube for the reading:
 
 https://www.youtube.com/watch?v=CaVaF6TkSUU&t=0s
+
+---
 
 @Charles Bukowski, author of The Mind &
 
