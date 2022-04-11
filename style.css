@@ -46,6 +46,30 @@ h4 {
   color:#0c666d
 }
 
+li {
+  display: inline;
+  color:#ffffff;
+  padding: 0 2vw;
+  font-size: 30px;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in-out;
+}
+
+li:hover {
+  opacity: 1;
+}
+
+a:visited {
+  color:#ffffff;
+}
+
+header {
+  position: absolute;
+  bottom: 90%;
+  width: 100vw;
+  text-align: right;
+}
+
 .music-container {
   background-color: #fff;
   border-radius: 15px;
@@ -232,28 +256,4 @@ h4 {
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
-}
-
-li {
-  display: inline;
-  color:#ffffff;
-  padding: 0 2vw;
-  font-size: 30px;
-  opacity: 0.4;
-  transition: opacity 0.2s ease-in-out;
-}
-
-li:hover {
-  opacity: 1;
-}
-
-a:visited {
-  color:#ffffff;
-}
-
-header {
-  position: absolute;
-  bottom: 90%;
-  width: 100vw;
-  text-align: right;
 }
