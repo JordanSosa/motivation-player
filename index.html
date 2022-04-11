@@ -13,20 +13,31 @@
   </head>
   <body>
     <h1>Motivation Player</h1>
-
+    
+    <!-- MUSIC PLAYER CONTAINER -->
     <div class="music-container" id="music-container">
+
+    <!-- MUSIC INFO SLIDE-OUT -->
       <div class="music-info">
         <h4 id="title"></h4>
+        <h3 id="currTime"></h2>
+        <h3>/</h3>
+        <h3 id="durTime"></h3>
+    <!-- PROGRESS BAR -->
         <div class="progress-container" id="progress-container">
           <div class="progress" id="progress"></div>
         </div>
       </div>
-
+    
+    <!-- CURRENT AUDIO -->
       <audio src="./motivation/defeat.mp3" id="audio"></audio>
-
+    
+    <!-- SPINNING CD IMG-->
       <div class="img-container">
         <img src="images/ukulele.jpg" alt="motivation-cover" id="cover" />
       </div>
+    
+    <!-- AUDIO CONTROLS-->
       <div class="navigation">
         <button id="prev" class="action-btn">
           <i class="fas fa-backward"></i>
@@ -38,7 +49,6 @@
           <i class="fas fa-forward"></i>
         </button>
 
-
         <button id="slider_container" class="volume-btn">
           <i class="fa fa-volume-down" onclick="setVolumeMin()"></i>
            <input type="range" min="1" max="100" value="99" class="volume-slider" onchange="setVolume()">
@@ -46,6 +56,8 @@
         </button>
       </div>
     </div>
+
+    <!-- QUOTE -->
     <div id="quote">
       <h2>Happiness is not by chance,<br>
           but  <span id="choice">by choice.</span>

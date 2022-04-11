@@ -1,3 +1,4 @@
+// IMPORTED RELEVANT ELEMENTS
 const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
@@ -12,23 +13,22 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 const volume_slider = document.querySelector('.volume-slider');
 
-// Song titles
 const songs = ['Defeat', 'Desiderata', 'The Mind'];
 
-// Keep track of song
+// SONG INDEX (PLAYLIST POSITION)
 let songIndex = 2;
 
-// Initially load song details into DOM
+// LOAD SONG ON PAGE LOAD
 loadSong(songs[songIndex]);
 
-// Update song details
+// LOAD SELECTED SONG
 function loadSong(song) {
   title.innerText = song;
   audio.src = `motivation/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
 }
 
-// Play song
+// START SONG AND REPLACE PLAY BUTTON WITH PAUSE BUTTON
 function playSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
@@ -37,7 +37,7 @@ function playSong() {
   audio.play();
 }
 
-// Pause song
+// PAUSE SONG AND REPLACE PAUSE BUTTON WITH PLAY BUTTON
 function pauseSong() {
   musicContainer.classList.remove('play');
   playBtn.querySelector('i.fas').classList.add('fa-play');
@@ -46,7 +46,7 @@ function pauseSong() {
   audio.pause();
 }
 
-// Previous song
+// GO TO PREVIOUS SONG IN SONG ARRAY
 function prevSong() {
   songIndex--;
 
@@ -59,7 +59,7 @@ function prevSong() {
   playSong();
 }
 
-// Next song
+// GO TO NEXT SONG IN SONG ARRAY
 function nextSong() {
   songIndex++;
 
@@ -72,29 +72,31 @@ function nextSong() {
   playSong();
 }
 
-// Update progress bar
+// UPDATE PROGRESS BAR AS SONG PLAYS
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
 }
 
-//Change Volume
+// VOLUME SLIDER FUNCTIONALITY
 function setVolume(){
     audio.volume = volume_slider.value / 100;
 }
 
+// MUTE VOLUME
 function setVolumeMin() {
 	audio.volume = 0;
 	volume_slider.value = 0;
 }
 
+// MAXIMIZE VOLUME
 function setVolumeMax() {
 	audio.volume = 1;
 	volume_slider.value = 100;
 }
 
-// Set progress bar
+// SET PROGRESS BAR POSITION
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
@@ -103,18 +105,18 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-//get duration & currentTime for Time of song
+// MEASURE DURATION AND CURRENT TIME OF SONG
 function DurTime (e) {
 	const {duration,currentTime} = e.srcElement;
 	var sec;
 	var sec_d;
 
-	// define minutes currentTime
+	// MEASURE MINUTES
 	let min = (currentTime==null)? 0:
 	 Math.floor(currentTime/60);
 	 min = min <10 ? '0'+min:min;
 
-	// define seconds currentTime
+	// MEASURE SECONDS
 	function get_sec (x) {
 		if(Math.floor(x) >= 60){
 			
@@ -132,10 +134,10 @@ function DurTime (e) {
 
 	get_sec (currentTime,sec);
 
-	// change currentTime DOM
+	// UPDATE CURRENT TIME ON WEBPAGE
 	currTime.innerHTML = min +':'+ sec;
 
-	// define minutes duration
+	// GET MINUTES DURATION
 	let min_d = (isNaN(duration) === true)? '0':
 		Math.floor(duration/60);
 	 min_d = min_d <10 ? '0'+min_d:min_d;
@@ -157,16 +159,16 @@ function DurTime (e) {
 		 }
 	} 
 
-	// define seconds duration
+	// GET SECONDS DURATION
 	
 	get_sec_d (duration);
 
-	// change duration DOM
+	// UPDATE DURATION ON WEBPAGE
 	durTime.innerHTML = min_d +':'+ sec_d;
 		
 };
 
-// Event listeners
+// EVENT LISTENER FOR PLAY/PAUSE BUTTON
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
 
@@ -177,18 +179,18 @@ playBtn.addEventListener('click', () => {
   }
 });
 
-// Change song
+// LISTENER FOR NEXT AND PREVIOUS SONG BUTTONS
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 
-// Time/song update
+// LISTENER FOR UPDATE TIME AND SONG
 audio.addEventListener('timeupdate', updateProgress);
 
-// Click on progress bar
+// LISTENER FOR PROGRESS BAR CLICK
 progressContainer.addEventListener('click', setProgress);
 
-// Song ends
+// LISTENER FOR SONG ENDING
 audio.addEventListener('ended', nextSong);
 
-// Time of song
+// LISTENER FOR CURRENT TIME OF SONG
 audio.addEventListener('timeupdate',DurTime);
