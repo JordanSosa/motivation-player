@@ -21,12 +21,22 @@ body {
 
 h1 {
   color: #fafafa;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 h4 {
   color: #0c666d;
   opacity: 0.9;
+}
+
+#quote {
+  text-align: center;
+  color: #fafafa;
+  opacity: 0.7;
+}
+
+#choice {
+  color:#0c666d
 }
 
 .music-container {
