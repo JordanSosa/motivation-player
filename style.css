@@ -188,6 +188,18 @@ h4 {
   border-radius: 40px;;
 }
 
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: rgb(213, 223, 199);
+  cursor: pointer;
+  outline: none;
+  border-color:#439472;
+  border-radius: 40px;;
+}
+
 .music-container.play .music-info {
   opacity: 1;
   transform: translateY(-100%);
