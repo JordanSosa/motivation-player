@@ -233,3 +233,22 @@ h4 {
   width: 0%;
   transition: width 0.1s linear;
 }
+
+li {
+  display: inline;
+  color:#ffffff;
+  padding: 0 2vw;
+  font-size: 30px;
+  opacity: 0.4;
+}
+
+a:visited {
+  color:#ffffff;
+}
+
+header {
+  position: absolute;
+  bottom: 90%;
+  width: 100vw;
+  text-align: right;
+}
