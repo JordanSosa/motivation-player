@@ -240,6 +240,11 @@ li {
   padding: 0 2vw;
   font-size: 30px;
   opacity: 0.4;
+  transition: opacity 0.2s ease-in-out;
+}
+
+li:hover {
+  opacity: 1;
 }
 
 a:visited {
